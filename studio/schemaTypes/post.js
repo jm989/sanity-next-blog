@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'post',
@@ -23,21 +23,19 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: [{ type: 'author' }],
     }),
     defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
     }),
     defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{ type: 'reference', to: [{ type: 'category' }] }],
     }),
     defineField({
       name: 'publishedAt',
@@ -45,21 +43,25 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      description: 'Short summary for previews or meta descriptions.',
+    }),
+    defineField({
+      name: 'readTime',
+      title: 'Read time (minutes)',
+      type: 'number',
+    }),
+    defineField({
+      name: 'featured',
+      title: 'Featured Post?',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
     }),
   ],
-
-  preview: {
-    select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
-    },
-  },
 })
