@@ -3,6 +3,9 @@ import { PortableText } from 'next-sanity';
 import Image from 'next/image';
 import { urlFor } from '../../../sanity/image';
 
+export const revalidate = 0;          // disable ISR cache
+export const dynamic = 'force-dynamic'; // ensure dynamic rendering
+
 const postQuery = `
 *[_type == "post" && slug.current == $slug][0]{
   title, mainImage, body, publishedAt, author->{name, bio, image}, categories[]->{title}

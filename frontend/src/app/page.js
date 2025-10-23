@@ -3,6 +3,9 @@ import Image from 'next/image';
 import { client } from '../sanity/client';
 import { urlFor } from '../sanity/image';
 
+export const revalidate = 0;          // disable ISR cache
+export const dynamic = 'force-dynamic'; // ensure dynamic rendering
+
 const listQuery = `
 *[_type=="post"] | order(publishedAt desc)[0...20]{
   _id, title, slug, mainImage, publishedAt, excerpt, featured
