@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         <main className="max-w-4xl mx-auto p-6">{children}</main>
         <footer className="border-t border-zinc-800">
           <div className="max-w-4xl mx-auto p-6 text-center text-sm text-zinc-500">
-            © {new Date().getFullYear()} Jayden Martins
+            © {new Date().getFullYear()} Javio
           </div>
         </footer>
       </body>
