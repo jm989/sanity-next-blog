@@ -17,7 +17,7 @@ export const metadata = {
   title: "Touchline Epiphanies",
   description: "Football takes, code notes, and assorted brain dumps.",
   icons: {
-    icon: "./favicon.ico",
+    icon: "/favicon.ico",
   }, 
 };
 
