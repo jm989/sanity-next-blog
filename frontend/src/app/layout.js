@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,7 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Touchline Epiphanies",
   description: "Football takes, code notes, and assorted brain dumps.",
+  icons: {
+    icon: "./favicon.ico",
+  }, 
 };
+
 
 export default function RootLayout({ children }) {
   return (
